@@ -1,0 +1,62 @@
+<template name="login">
+  <div id="login" class="ui segment">
+    {{#if error}}
+    <div class="ui small error message">
+      {{error}}
+    </div>
+    {{/if}}
+    <!-- The normal participant login screen should be replaced with a form that asks for First Name, Last Name, Track (Dropdown). -->
+    <!-- BEGIN LOGIN FORM -->
+    <!-- The UI box -->
+
+    <div class="ui login-password form">
+
+      <div class="two fields">
+        <div class="field">
+          <label>First Name</label>
+          <input placeholder="First Name" type="text" id="first-name">
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input placeholder="Last Name" type="text" id="last-name">
+        </div>
+      </div>
+      <div class="field">
+        <label>I am a:</label>
+        <div class="ui selection dropdown" id="track-selection">
+          <div class="default text">Select Role</div>
+          <i class="dropdown icon"></i>
+          <input type="hidden" name="track">
+          <div class="menu">
+            <div class="item" data-value="Mentor">Mentor
+            </div>
+            <div class="item" data-value="{{constant 'TRACK_1_DESC'}}">
+              <img class="ui mini spaced image" src="{{constant 'TRACK_1_ICON'}}"/>{{constant 'TRACK_1_DESC'}} Participant
+            </div>
+            <div class="item" data-value="{{constant 'TRACK_2_DESC'}}">
+              <img class="ui mini spaced image" src="{{constant 'TRACK_2_ICON'}}"/>{{constant 'TRACK_2_DESC'}} Participant
+            </div>
+            <div class="item" data-value="{{constant 'TRACK_3_DESC'}}">
+              <img class="ui mini spaced image" src="{{constant 'TRACK_3_ICON'}}"/>{{constant 'TRACK_3_DESC'}} Participant
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <button id="login-submit" class="fluid primary push button"> Login </button>
+      </div>
+    </div>
+
+
+    <!-- END LOGIN FORM -->
+
+    {{#if enabled.github}}
+    <br>
+    <button id="login-github" class="fluid github push button"> Login with Github </button>
+    {{/if}} {{#if enabled.facebook}}
+    <br>
+    <button id="login-facebook" class="fluid facebook push button"> Login with Facebook</button>
+    {{/if}}
+  </div>
+</template>

@@ -1,0 +1,19 @@
+<template name="mentor">
+  <div id="mentor">
+    <div class="ui three column stackable centered container grid">
+      <div class="4 wide column" id="track_1_tickets">
+        <h3 style="text-align:center;">{{constant 'TRACK_1_DESC'}}</h3>
+        {{> tickets column=1 }}
+      </div>
+      <div class="4 wide column" id="track_1_tickets">
+        <h3 style="text-align:center;">{{constant 'TRACK_2_DESC'}}</h3>
+        {{> tickets column=2 }}
+      </div>
+      <div class="4 wide column" id="track_1_tickets">
+        <h3 style="text-align:center;">{{constant 'TRACK_3_DESC'}}</h3>
+        {{> tickets column=3 }}
+      </div>
+    </div>
+    <br>
+  </div>
+</template>
